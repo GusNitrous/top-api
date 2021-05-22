@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - name: Publish to registry
-      - uses: elgohr/Publish-Docker-Github-Action@main
+        uses: elgohr/Publish-Docker-Github-Action@main
         with:
           registry: docker.pkg.github.com
           name: docker.pkg.github.com/GusNitrous/top-api/top-api
