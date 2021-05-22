@@ -9,9 +9,9 @@ import {
 	Post,
 	UseGuards,
 	UsePipes,
-	ValidationPipe
+	ValidationPipe,
 } from '@nestjs/common';
-import { IdValidationPipe } from 'src/pipes/ad-validation.pipe';
+import { IdValidationPipe } from '../pipes/ad-validation.pipe';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { REVIEW_NOT_FOUND } from './review.constants';
@@ -19,7 +19,7 @@ import { ReviewService } from './review.service';
 
 @Controller('review')
 export class ReviewController {
-	constructor(private readonly reviewService: ReviewService) { }
+	constructor(private readonly reviewService: ReviewService) {}
 
 	@UsePipes(new ValidationPipe())
 	@Post('create')

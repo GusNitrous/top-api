@@ -10,10 +10,10 @@ import {
 	Post,
 	UseGuards,
 	UsePipes,
-	ValidationPipe
+	ValidationPipe,
 } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
-import { IdValidationPipe } from 'src/pipes/ad-validation.pipe';
+import { JwtAuthGuard } from '../auth/guards/jwt.guard';
+import { IdValidationPipe } from '../pipes/ad-validation.pipe';
 import { CreateProductDto } from './dto/create-product.dto';
 import { FindProductDto } from './dto/find-product.dto';
 import { PRODUCT_NOT_FOUND_ERROR } from './product.constants';
@@ -22,7 +22,7 @@ import { ProductService } from './product.service';
 
 @Controller('product')
 export class ProductController {
-	constructor(private readonly productService: ProductService) { }
+	constructor(private readonly productService: ProductService) {}
 
 	@UseGuards(JwtAuthGuard)
 	@Post('create')
